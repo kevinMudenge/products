@@ -1,13 +1,24 @@
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
 import './App.css';
+
 import Dashboardlayout from './dashboardlayout';
 import Dashboard from './scenes/dashboard';
-import Prroductdetails from './scenes/productdetails';
+import Productdetails from './scenes/productdetails';
+
+import NotFound404 from './scenes/NotFound404';
 
 function App() {
   return (
-    <div className="App">
-hello
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element ={<Dashboardlayout />}/>
+        <Route index element={<Dashboard />}/>
+        <Route path='/:slug' element={<Productdetails/>}/>
+
+        <Route path="*" element={<NotFound404 />} /> 
+      </Routes>
+    </BrowserRouter>
   );
 }
 
