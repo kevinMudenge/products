@@ -1,7 +1,7 @@
 import './App.css';
-import Dashboardlayout from './Dashboardlayout';
-import Dashboard from './scenes/Dashboard';
-import Prroductdetails from './scenes/Productdetails';
+import Dashboardlayout from './dashboardlayout';
+import Dashboard from './scenes/dashboard';
+import Prroductdetails from './scenes/productdetails';
 
 function App() {
   return (
