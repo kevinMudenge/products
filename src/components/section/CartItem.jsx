@@ -6,26 +6,32 @@ import { changeQuantity } from '../../stores/cart';
 import { products } from '../../data/products';
 
 const CartItem = (props) => {
-    const {productId, quantity} = props.data;
-    const [detail, setDetail] =useState();
+    const { productId, quantity } = props.data;
+    const [detail, setDetail] = useState(null);  // Initialize detail to null
     const dispatch = useDispatch();
-
+  
     useEffect(() => {
-        const findDetail = products.filter(product => product.id === productId)[0];
-        setDetail(findDetail);
-    }, [productId])
-
+      const findDetail = products.find(product => product.id === productId);  
+      // Use find instead of filter, generating errors
+      setDetail(findDetail);
+    }, [productId]);
+  
     const handleMinusQuantity = () => {
-        dispatch(changeQuantity({
-            productId: productId,
-            quantity: productId - 1
-        }));
+      dispatch(changeQuantity({
+        productId: productId,
+        quantity: quantity - 1  // Corrected quantity decrement
+      }));
     }
+  
     const handlePlusQuantity = () => {
-        dispatch(changeQuantity({
-            productId: productId,
-            quantity: quantity + 1
-        }));
+      dispatch(changeQuantity({
+        productId: productId,
+        quantity: quantity + 1
+      }));
+    }
+  
+    if (!detail) {
+      return null; // Or a loading indicator
     }
 
   return (

@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import './App.css';
-
 import Dashboardlayout from './dashboardlayout';
 import Dashboard from './scenes/dashboard';
 import Productdetails from './scenes/productdetails';
@@ -12,10 +10,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element ={<Dashboardlayout />}/>
-        <Route index element={<Dashboard />}/>
-        <Route path='/:slug' element={<Productdetails/>}/>
-
+        <Route path='/' element ={<Dashboardlayout />}>
+          <Route index element={<Dashboard />}/>
+          <Route path='/:slug' element={<Productdetails/>}/>
+        </Route>
         <Route path="*" element={<NotFound404 />} /> 
       </Routes>
     </BrowserRouter>
