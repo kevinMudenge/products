@@ -1,33 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    items: localStorage.getItem("carts") ? JSON.parse(localstorage.getitem("carts")) : [],
+    items: localStorage.getItem("carts") ? JSON.parse(localStorage.getItem("carts")) : [],
     statusTab: false
 }
 
-const cartSlice =createSlice({
+const cartSlice = createSlice({
     name: 'cart',
     initialState,
-    reducers:{
+    reducers: {
         addToCart(state, action){
             const {productId, quantity} = action.payload;
             const indexProductId = (state.items).findIndex(item => item.productId === productId);
-            if (indexProductId >= 0){
+            if(indexProductId >= 0){
                 state.items[indexProductId].quantity += quantity;
-            } else{
+            }else{
                 state.items.push({productId, quantity});
             }
             localStorage.setItem("carts", JSON.stringify(state.items));
         },
 
         changeQuantity(state, action){
-            const {productId, quantity} = action.payload;  
+            const {productId, quantity} = action.payload;
             const indexProductId = (state.items).findIndex(item => item.productId === productId);
-            if (quantity > 0){
+            if(quantity > 0){
                 state.items[indexProductId].quantity = quantity;
-            } else {
-                //delete state.items[indexProductId]; creates error does not delete undefines so instead...
-
+            }else{
                 state.items = (state.items).filter(item => item.productId !== productId);
             }
             localStorage.setItem("carts", JSON.stringify(state.items));
@@ -36,11 +34,11 @@ const cartSlice =createSlice({
         toggleStatusTab(state){
             if(state.statusTab === false){
                 state.statusTab = true;
-            } else {
+            }else{
                 state.statusTab = false;
             }
         }
     }
 })
 export const { addToCart, changeQuantity, toggleStatusTab } = cartSlice.actions;
-export default cartSlice.reducer
+export default cartSlice.reducer;
