@@ -1,13 +1,12 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 import { addToCart } from '../../stores/cart';
 
-import iconCart from '../../assets/images/cart.png'; 
+import iconCart from '../../assets/images/shopper.png'; 
 
 const ProductCart = (props) => {
-  const carts = useSelector(store => store.cart.items);
 
     const dispatch = useDispatch();
     const handleAddToCart = () => {
@@ -24,7 +23,7 @@ const ProductCart = (props) => {
         <Link to={slug}>
             <img src={image} alt='' className='w-full h-80 object-cover object-top drop-shadow-[0_80px_30px_#0007]' />
         </Link>
-        <h3 className='text-2xl py-3 text-center font-medium'>{name}</h3>
+        <h3 className='text-2xl pb-3 pt-6 font-medium'>{name}</h3>
         <div className='flex justify-between items-center'>
             <p>
                 Ksh. <span className='text-2xl font-medium'>{price}</span>

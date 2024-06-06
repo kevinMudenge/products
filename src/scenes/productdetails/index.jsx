@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { products } from '../../data/products';
@@ -9,6 +10,7 @@ const Productdetails = () => {
   const { slug } = useParams();
   const [quantity, setQuantity]= useState(1);
   const dispatch= useDispatch();
+  const navigate = useNavigate();
 
   const [detail, setDetail] = useState([]);
   useEffect(()=> {
@@ -17,9 +19,11 @@ const Productdetails = () => {
     if(findDetail.length > 0){
       setDetail(findDetail[0])
     } else {
-      window.location.href = '/404PageNotFound';
+      //window.location.href = '/404PageNotFound'; caused errors
+      navigate('//404PageNotFound')
+
     }
-  }, [slug])
+  }, [slug, navigate])//only runs if either of the two changes that should handle that.
 
   const handleMinusQuantity =()=>{
     setQuantity(quantity - 1 < 1 ? 1 : quantity -1)}
@@ -36,15 +40,15 @@ const Productdetails = () => {
   
   return (
     <div>
-      <h2 className='text-3xl text-center'>PRODUCT DETAILS</h2>
+      <h2 className='text-3xl mb-12 mt-3 text-center'>PRODUCT DETAILS</h2>
       <div className='grid grid-cols-2 gap-5 mt-5'>
         <div>
-          <img src={detail.image} alt="" className='w-full'/>
+          <img src={detail.image} alt="" className= 'max-h-lvh'/>
         </div>
         <div className='flex flex-col gap-5'>
           <h1 className='text-4xl uppercase font-bold'>{detail.name}</h1>
-          <p className='font-bold text-3xl'>
-            ${detail.price}
+          <p className='font-bold text-3xl mb-6'>
+            Ksh. {detail.price}
           </p>
           <div className='flex gap-5'>
           <div className='flex gap-2 justify-center items-center'>
