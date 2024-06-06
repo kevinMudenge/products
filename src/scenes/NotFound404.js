@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const NotFound404 = () => {
-  const [countdown, setCountdown] = useState(300); // 300 seconds = 5 minutes
+  const [countdown, setCountdown] = useState(75);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (countdown === 0) {
-      navigate('/'); // Redirect to the products page after countdown
+      navigate('/');
     }
     const timer = setInterval(() => {
       setCountdown(prevCountdown => prevCountdown - 1);
     }, 1000);
     
-    return () => clearInterval(timer); // Cleanup timer on component unmount
+    return () => clearInterval(timer); // Cleans up timer on component unmount
   }, [countdown, navigate]);
 
   const formatTime = (seconds) => {
@@ -23,10 +23,15 @@ const NotFound404 = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '20%' }}>
-      <h1>Product Not Found</h1>
-      <p>Redirecting to the products page in {formatTime(countdown)}...</p>
-      <button onClick={() => navigate('/products')}>Click here to go now</button>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <h1 className="text-5xl font-bold text-red-600 mb-4">Product Not Found</h1>
+      <p className="text-xl mb-10">Redirecting to the Home page in {formatTime(countdown)}...</p>
+      <button 
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => navigate('/')}
+      >
+        Click Here To Go Now
+      </button>
     </div>
   );
 };

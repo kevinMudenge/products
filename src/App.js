@@ -14,6 +14,7 @@ function App() {
           <Route index element={<Dashboard />}/>
           <Route path='/:slug' element={<Productdetails/>}/>
         </Route>
+        <Route path="404" element={<NotFound404 />} />
         <Route path="*" element={<NotFound404 />} /> 
       </Routes>
     </BrowserRouter>

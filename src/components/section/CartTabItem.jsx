@@ -31,7 +31,7 @@ const CartItem = (props) => {
     }
   
     if (!detail) {
-      return null; // Or a loading indicator
+      return null; // Or a loading indicator depends with data size
     }
 
   return (

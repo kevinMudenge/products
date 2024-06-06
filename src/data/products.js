@@ -1,3 +1,4 @@
+//books
 import imageProduct1 from '../assets/images/unnamed8.jpg'
 import imageProduct5 from '../assets/images/unnamed5.jpg'
 import imageProduct3 from '../assets/images/unnamed3.jpg'
@@ -7,6 +8,7 @@ import imageProduct8 from '../assets/images/unnamed1.jpg'
 import imageProduct2 from '../assets/images/unnamed2.jpg'
 import imageProduct4 from '../assets/images/unnamed4.jpg'
 
+//chairs
 import imageProduct9 from '../assets/images/1.png' 
 import imageProduct10 from '../assets/images/2.png' 
 import imageProduct11 from '../assets/images/3.png' 

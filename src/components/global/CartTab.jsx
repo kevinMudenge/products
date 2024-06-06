@@ -10,7 +10,7 @@ const CartTab = () => {
   const statusTab = useSelector(store => store.cart.statusTab);
   const dispatch = useDispatch();
   const handleCloseTabCart = () => {
-      dispatch(toggleStatusTab());
+    dispatch(toggleStatusTab());
   }
 
   const booksItems = carts.filter(item => item.productId <= 8);
@@ -20,9 +20,9 @@ const CartTab = () => {
   const [totalQuantity, setTotalQuantity] = useState(0);
   
   useEffect(() => {
-      let total = 0;
-      carts.forEach(item => total += item.quantity);
-      setTotalQuantity(total);
+    let total = 0;
+    carts.forEach(item => total += item.quantity);
+    setTotalQuantity(total);
   }, [carts])
 
 return (
@@ -34,8 +34,10 @@ return (
       <h2 className=' text-white text-2xl'>Shopping Cart</h2>
       <div className='w-6 h-6 bg-gray-100 rounded-full
       flex justify-center items-center relative'>
-          <img src={iconCart} alt="" className='w-4'/>
-          <span className='absolute top-2/3 right-1/2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex justify-center items-center'>{totalQuantity}</span>
+        <img src={iconCart} alt="" className='w-4'/>
+        <span className='absolute top-2/3 right-1/2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex justify-center items-center'> 
+          {totalQuantity}
+        </span>
       </div>
     </div>
     <div>

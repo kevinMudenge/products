@@ -10,12 +10,12 @@ const Dashboardlayout = () =>{
   
   return (
     <div className='bg-zinc-200'>
-        <main className={`w-[1200px] max-w-full m-auto p-5 transform transition-transform duration-500
-        ${statusTabCart ? "col-span-1" : "col-span-2"}`}>
-            <Header />
-            <Outlet />
-        </main>
-        <CartTab />
+      <main className={`w-[1200px] max-w-full m-auto p-5 transform transition-transform duration-500
+      ${statusTabCart ? "col-span-1" : "col-span-2"}`}>
+        <Header />
+        <Outlet />
+      </main>
+      <CartTab />
     </div>
   )
 }

@@ -19,12 +19,10 @@ const Productdetails = () => {
     if(findDetail.length > 0){
       setDetail(findDetail[0])
     } else {
-      //window.location.href = '/404PageNotFound'; caused errors
-      navigate('//404PageNotFound')
-
+      navigate('/404')
     }
-  }, [slug, navigate])//only runs if either of the two changes that should handle that.
-
+  }, [slug, navigate]) 
+  
   const handleMinusQuantity =()=>{
     setQuantity(quantity - 1 < 1 ? 1 : quantity -1)}
   const handlePlusQuantity =()=>{
