@@ -1,11 +1,11 @@
-import imageProduct1 from './assets/images/unnamed8.jpg'
-import imageProduct5 from './assets/images/unnamed5.jpg'
-import imageProduct3 from './assets/images/unnamed3.jpg'
-import imageProduct6 from './assets/images/unnamed6.jpg'
-import imageProduct7 from './assets/images/unnamed7.jpg'
-import imageProduct8 from './assets/images/unnamed1.jpg'
-import imageProduct2 from './assets/images/unnamed2.jpg'
-import imageProduct4 from './assets/images/unnamed4.jpg'
+import imageProduct1 from '../assets/images/unnamed7.jpg'
+import imageProduct5 from '../assets/images/unnamed5.jpg'
+import imageProduct3 from '../assets/images/unnamed3.jpg'
+import imageProduct6 from '../assets/images/unnamed6.jpg'
+import imageProduct7 from '../assets/images/unnamed7.jpg'
+import imageProduct8 from '../assets/images/unnamed1.jpg'
+import imageProduct2 from '../assets/images/unnamed2.jpg'
+import imageProduct4 from '../assets/images/unnamed4.jpg'
 
 export const products = [
     {

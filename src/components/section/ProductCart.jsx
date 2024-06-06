@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 
 import { addToCart } from '../../stores/cart';
 
-import cart from '../../assets/images/cart.png';
+import cart from '../../assets/images/cart.png'; 
 
 const ProductCart = (props) => {
   const carts = useSelector(store => store.cart.items);
+  console.log(carts);
   const dispatch = useDispatch();
   const handleAddToCart =() =>{
     dispatch(addToCart({

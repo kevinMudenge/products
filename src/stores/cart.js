@@ -17,7 +17,6 @@ const cartSlice =createSlice({
             } else{
                 state.items.push({productId, quantity});
             }
-            
             localStorage.setItem("carts", JSON.stringify(state.items));
         },
 
@@ -31,7 +30,6 @@ const cartSlice =createSlice({
 
                 state.items = (state.items).filter(item => item.productId !== productId);
             }
-
             localStorage.setItem("carts", JSON.stringify(state.items));
         },
         
