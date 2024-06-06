@@ -60,7 +60,7 @@ const Productdetails = () => {
             Add To Cart
           </button>
           </div>
-          <p>
+          <p className='mt-4'>
             {detail.description}
           </p>
         </div>
