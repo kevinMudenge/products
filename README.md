@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a single-page application (SPA) for displaying products and managing a checkout cart. Users can browse products, add them to their cart, and proceed to checkout. They can also remove products, view product details on te product details page, etcetera.
+This project is a simple application platform for displaying products and managing a checkout cart. Users can browse products, add them to their cart, and proceed to checkout. They can also remove products, view product details on the product details page, etcetera.
 
 The application is built using React, TailwindCSS and Redux Toolkit.
 
