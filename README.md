@@ -38,4 +38,4 @@ npm start
 
 - React
 - Redux Toolkit
-- TailwindCSS (for styling)
+- TailwindCSS
