@@ -32,7 +32,7 @@ export const products = [
         name: 'Dream',
         price: 200,
         image: imageProduct7,
-        description: "Tells the story of a young boy named Oliver who discovers a mysterious connection to the stars after a chance encounter with a shooting star one summer night. As he embarks on a journey to unravel the secrets of the universe, Oliver learns valuable lessons about courage, friendship, and the power of dreams. With the help of newfound friends and a dash of celestial magic, he discovers that the greatest adventures lie within reach of those who dare to reach for the stars.",
+        description: "Tells the story of a young boy named I who discovers a mysterious connection to the stars after a chance encounter with a shooting star one summer night. As he embarks on a journey to unravel the secrets of the universe, I learns valuable lessons about courage, friendship, and the power of dreams. With the help of newfound friends and a dash of celestial magic, he discovers that the greatest adventures lie within reach of those who dare to reach for the stars.",
         slug: 'stars',
     },
     {
